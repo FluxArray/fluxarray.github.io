@@ -87,23 +87,22 @@ a:hover { color: var(--muted-color); }
 }
 
 .navbar-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 30px;
+    width: 100%;             /* Use full screen width */
     height: 6rem;
+    padding: 0 40px;         /* Space from left/right edges */
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative; /* Needed for centering links */
+    align-items: center;     /* Vertically center everything */
+    /* No justify-content needed because we use margins below */
 }
 
 /* Navbar Left (Profile) */
 .navbar-left {
-    margin-left: -10%;
+
+    margin-right: auto;
+    margin-left: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
 }
 .profile-name {
     font-weight: 500;
@@ -126,11 +125,10 @@ a:hover { color: var(--muted-color); }
 .nav-center {
     display: flex;
     gap: 40px;
-    
-    /* Absolute Centering for Desktop */
-    margin-left: 90%;
-    position: absolute;
-    transform: translateX(-50%);
+    margin-right: 40px;
+    position: static;
+    transform: none;
+    margin-left: 0;
 }
 
 .nav-link {
@@ -176,7 +174,6 @@ a:hover { color: var(--muted-color); }
 
 /* Theme Toggle Button */
 .theme-toggle {
-    margin-left: 200%;
     background: transparent;
     border: none;
     cursor: pointer; 
@@ -365,25 +362,41 @@ body.hovering .cursor-outline {
     .navbar-container {
         padding: 0 20px;
         height: 5rem;
-        /* Reset relative positioning if needed */
-        justify-content: space-between; 
+        /* Ensure standard flex behavior */
+        justify-content: flex-start; 
+        position: relative;
     }
 
-    /* 1. Simplify Profile */
+    /* 1. Fix Profile / Logo Visibility */
+    .navbar-left {
+        /* Reset the negative margin from desktop so it's visible */
+        margin-left: 0rem;
+        margin-right: auto; /* Keeps logo on the far left */
+    }
+    
     .profile-name {
         font-size: 1rem;
         margin-top: 0;
     }
+    
     .profile-role { 
-        display: none !important; /* Hide full name */
+        display: none !important; /* Hide full name role */
     }
 
-    /* 2. Fix Center Links (Stop Absolute Centering) */
+    /* 2. Fix Center Links (Move A/B to the Right) */
     .nav-center {
         position: static; /* Remove absolute centering */
         transform: none;  /* Remove shift */
+        margin: 0;        /* Reset margins */
+        
+        /* Display & Gap settings */
+        display: flex;
+        align-items: center;
         gap: 20px;
-        margin: 0;
+        
+        /* Push this section to the right side */
+        margin-left: auto; /* This flex trick pushes it to the right */
+        margin-right: 20px; /* Add space between Links and Toggle */
     }
 
     /* Show "A" / "B" instead of words */
@@ -395,27 +408,21 @@ body.hovering .cursor-outline {
         font-size: 1rem;
     }
 
-    /* 3. Compact Right Side */
+    /* 3. Fix Toggle & Right Side */
     .navbar-right {
         gap: 15px;
+        /* Ensure it sits naturally in the flex flow */
+        margin-left: 0; 
+    }
+    
+    .theme-toggle {
+        /* Reset the 200% margin that was pushing it off screen */
+        margin-left: 0; 
+        transform: scale(0.9);
     }
     
     .social-icon {
         width: 24px;
         height: 24px;
-    }
-
-    .theme-toggle {
-        transform: scale(0.9);
-    }
-}
-
-@media (max-width: 600px) {
-    body { cursor: auto; }
-    .cursor-dot, .cursor-outline { display: none; }
-    main.content { padding: 40px 20px; }
-    
-    .navbar-container {
-        padding: 0 15px;
     }
 }

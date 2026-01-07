@@ -31,16 +31,34 @@ document.addEventListener('DOMContentLoaded', () => {
         let mouseX = 0, mouseY = 0;
         let outlineX = 0, outlineY = 0;
 
+        let isCursorVisible = false;
+
         const speed = 0.15;
         const squeeze = 0.15;
 
         window.addEventListener('mousemove', (e) => {
+            // 1. Get position
             mouseX = e.clientX;
             mouseY = e.clientY;
+            
+            // 2. logic for First Move
+            if (!isCursorVisible) {
+                isCursorVisible = true;
+                
+                // Snap outline to mouse instantly so it doesn't "fly" from 0,0
+                outlineX = mouseX;
+                outlineY = mouseY;
+                
+                // Show the cursor
+                document.body.classList.add('cursor-active');
+            }
+
+            // 3. Move the dot immediately
             cursorDot.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
         });
 
         const animate = () => {
+            // ... keep your existing animate code exactly the same ...
             const distX = mouseX - outlineX;
             const distY = mouseY - outlineY;
 

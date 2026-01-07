@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FluxArray</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,125 +12,105 @@
 </head>
 <body>
 
-    <nav class="sidebar">
-        <div class="profile-header">
-            <a href="fluxarray.github.io" class="profile-name">FluxArray</a>
-            <span class="profile-role">Ashutosh Pradhan</span>
+    <header class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-left">
+                <a href="index.html" class="profile-name">FluxArray</a>
+                <span class="profile-role">Ashutosh Pradhan</span> 
+            </div>
+
+            <nav class="nav-center">
+                <a href="index.html" class="nav-link">
+                    <span class="link-full">About</span>
+                    <span class="link-short">A</span>
+                </a>
+                <a href="blog.html" class="nav-link active">
+                    <span class="link-full">Blogs</span>
+                    <span class="link-short">B</span>
+                </a>
+            </nav>
+
+            <div class="navbar-right">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Switch Theme">
+                    <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                        <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor" />
+                        <g class="sun-beams" stroke="currentColor">
+                            <line x1="12" y1="1" x2="12" y2="3" />
+                            <line x1="12" y1="21" x2="12" y2="23" />
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                            <line x1="1" y1="12" x2="3" y2="12" />
+                            <line x1="21" y1="12" x2="23" y2="12" />
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                        </g>
+                        <mask class="moon" id="moon-mask">
+                            <rect x="0" y="0" width="100%" height="100%" fill="white" />
+                            <circle cx="14" cy="10" r="6" fill="black" />
+                        </mask>
+                    </svg>
+                </button>
+            </div>
         </div>
-
-        <div class="nav-category">Intro</div>
-        <ul class="nav-list">
-            <li><a href="#about" class="nav-link active">About Me</a></li>
-            <li><a href="#philosophy" class="nav-link">Philosophy</a></li>
-        </ul>
-
-        <div class="nav-category">Work</div>
-        <ul class="nav-list">
-            <li><a href="#projects" class="nav-link"> Selected Projects</a></li>
-            <li><a href="#experience" class="nav-link">Experience</a></li>
-            <li><a href="#skills" class="nav-link">Technical Skills</a></li>
-        </ul>
-
-        <div class="nav-category">Links</div>
-        <div class="social-row">
-            <a href="https://github.com/FluxArray" target="_blank" aria-label="GitHub">
-                <svg viewBox="0 0 24 24" class="social-icon">
-                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-            </a>
-            <a href="https://x.com/ashukuntent" target="_blank" aria-label="Twitter">
-                <svg viewBox="0 0 24 24" class="social-icon">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                </svg>
-            </a>
-            <a href="mailto:flux4rray@gmail.com" aria-label="Email">
-                <svg viewBox="0 0 24 24" class="social-icon">
-                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                </svg>
-            </a>
-
-        </div>
-    </nav>
-
+    </header>
+    
     <main class="content">
         <section id="about" class="section">
             <h2>~  > About Me</h2>
-            <p class="lead"><h3>Hello!, I'm Ashutosh.</h3></p>
-            <p>
-                I am a fresher at IIT Roorkee, pursuing a Bachelor of Science (BS) in Economics.
+            <p class="lead"><h3>Hello!, I'm Ashutosh,</h3>
+                currently a fresher at IIT Roorkee, pursuing a Bachelor of Science (BS) in Economics.
                 Outside academics, I'm a coding enthusiast who spends a lot of time doing
                 problem solving and exploring web.
             </p>
             <p>
                 I enjoy <a href="https://codeforces.com/profile/Flux4rray">competitive programming</a>, exploring linux, <a href="https://anilist.co/user/ashukuntent/">anime</a>, movies, books, and web novels — and this website is a place where
                 I document things I learn, build, and think about.
+            </p>
             <p>
-                If you are curious about what I think of different things, Click here ~ > <a href="#">Blogs</a>
+                If you are curious about what I think of different things, current projects, rants Click here ~ > <a href="blog.html">Blogs</a>
             </p>
         </section>
 
-        <section id="philosophy" class="section">
-            <h2>~  > Philosophy</h2>
-            <p>These are the principles that guide my work, inspired by UNIX philosophy and modern UX practices.</p>
-            <h3>Simplicity</h3>
-            <p>Complexity is the enemy of reliability. I strive to write code that is easy to read, easy to delete, and does one thing well.</p>
-            <h3>Robustness</h3>
-            <p>Systems should fail gracefully. Whether it's handling API errors or user input, I design for the "happy path" but engineer for the edge cases.</p>
-        </section>
-
         <section id="projects" class="section">
-            <h2>~  > Selected Projects</h2>
+            <h2>~  > Projects</h2>
             <div class="project-item">
-                <h3>cli-analyser</h3>
-                <span class="project-meta">--language=rust --stars=1.2k --status=maintained</span>
+                <h3>This website</h3>
+                <span class="project-meta">--language=html, css, js --stars=0 --status=maintained</span>
                 <p>
-                    A high-performance command line tool for analyzing log files. It parses raw text logs 10x faster than standard regex tools by using zero-copy deserialization.
+                    Feeling good about how this website turned out...<br>
+                    Hope to post here often;
                 </p>
-                <pre><code>$ cargo install cli-analyser
-$ log-check --file access.log --json</code></pre>
-                <p><a href="#">View Source</a> &middot; <a href="#">Read Case Study</a></p>
+                
+                <p>Here is the link to codes<br> &middot; <a href="https://github.com/FluxArray/FluxArray.github.io">Github</a></p>
             </div>
-
-            <div class="project-item">
-                <h3>border-radius-preview</h3>
-                <span class="project-meta">--stack=react --type=frontend --demo=live</span>
-                <p>
-                    A minimal GUI for generating complex CSS border-radius shapes. Built to help designers visualize organic shapes for web interfaces.
-                </p>
-                <p><a href="#">Visit Site</a> &middot; <a href="#">View Source</a></p>
-            </div>
-        </section>
-
-        <section id="experience" class="section">
-            <h2>~  > Experience</h2>
-            <ul>
-                <li>
-                    <strong>Senior Engineer @ Google</strong> <span class="muted-mono">(2021—Present)</span><br>
-                    Working on internal developer tools and cloud infrastructure.
-                </li>
-                <li>
-                    <strong>Software Developer @ StartupInc</strong> <span class="muted-mono">(2018—2021)</span><br>
-                    Led the migration from a monolith to microservices. Reduced deployment time by 40%.
-                </li>
-            </ul>
         </section>
         
         <section id="skills" class="section">
             <h2>~  > Technical Skills</h2>
-            <p><strong>Languages:</strong> Python, C, C++</p>
-            <p><strong>Tools:</strong> Linux</p>
+            <p><strong>Languages:</strong> Python, C, C++ <br>
+            <strong>Tools:</strong> Linux</p>
         </section>
 
         <section id="contact" class="footer">
             <p>
                 <strong>Let's connect.</strong> <br>
-                <a href="mailto:email@example.com">flux4rray@gmail.com</a>
-            </p>
-        </section>
-        <section id="thanks" class="regards">
-            <p>
-                <strong>inspired by.</strong> <br>
-                <a href="https://clig.dev/">clig</a>
+                <div class="social-row">
+                    <a href="https://github.com/FluxArray" target="_blank" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" class="social-icon">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="https://x.com/ashukuntent" target="_blank" aria-label="Twitter">
+                        <svg viewBox="0 0 24 24" class="social-icon">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:flux4rray@gmail.com" aria-label="Email">
+                        <svg viewBox="0 0 24 24" class="social-icon">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                    </a>
+                </div>
             </p>
         </section>
     </main>

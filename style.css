@@ -268,7 +268,18 @@ pre {
     border-radius: 50%;
     z-index: 9999;
     pointer-events: none;
+    
+    /* ADD THIS: Hide by default */
+    opacity: 0; 
+    transition: opacity 0.3s ease; /* Smooth fade-in */
 }
+
+/* Add this class to show them later */
+body.cursor-active .cursor-dot,
+body.cursor-active .cursor-outline {
+    opacity: 1;
+}
+
 .cursor-dot {
     width: 8px; height: 8px;
     margin-left: -4px; margin-top: -4px;

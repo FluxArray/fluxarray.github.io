@@ -850,6 +850,10 @@ body.is-home-page .content-pane {
 }
 
 /* Force the about page to align to the left */
+body.is-home-page #content-body {
+  display: none !important;
+}
+
 body.is-about-page .prose,
 body.is-about-page .plain-page {
   margin-left: 0 !important;

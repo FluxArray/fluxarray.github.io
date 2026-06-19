@@ -150,7 +150,7 @@ const Content = (() => {
       headerEl.innerHTML = '';
       paneEl.innerHTML = `<div class="error-view"><p>Couldn't load this page.</p><p class="error-detail">${escapeHtml(
         String(err.message || err)
-      )}</p><p class="error-hint">If you're opening this file directly (file://), serve it with a local server instead — see the README.</p></div>`;
+      )}</p></div>`;
     } finally {
       setLoading(false);
     }

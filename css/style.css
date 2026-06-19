@@ -282,6 +282,9 @@ html[data-skin='dark'] body::before {
   max-width: 42rem;
   font-size: var(--prose-font-size);
   line-height: 1.75;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 html[data-skin='sunny'] .prose { line-height: 1.7; }
 

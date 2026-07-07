@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Points to your content directory
-const CONTENT_DIR = path.join(__dirname, 'content');
+const CONTENT_DIR = path.join(__dirname, 'public', 'content');
 const MANIFEST_PATH = path.join(__dirname, 'public', 'content', 'manifest.json');
 
 function parseFrontmatter(fileContent) {

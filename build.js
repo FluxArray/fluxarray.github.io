@@ -1,9 +1,14 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+// Reconstruct __dirname in ES Modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Points to your content directory
 const CONTENT_DIR = path.join(__dirname, 'content');
-const MANIFEST_PATH = path.join(CONTENT_DIR, 'manifest.json');
+const MANIFEST_PATH = path.join(__dirname, 'public', 'content', 'manifest.json');
 
 function parseFrontmatter(fileContent) {
   const match = fileContent.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
@@ -48,7 +53,7 @@ function buildManifest() {
   for (const filePath of mdFiles) {
     // .split(path.sep).join('/') ensures forward slashes even on Windows
     const relFilePath = path.relative(CONTENT_DIR, filePath).split(path.sep).join('/');
-    
+
     // Convert to lowercase HTML URL path
     const urlPath = '/' + relFilePath.replace(/\.md$/, '.html').toLowerCase();
 

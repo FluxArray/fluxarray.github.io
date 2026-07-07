@@ -1,14 +1,15 @@
 <!doctype html>
 <html lang="en" data-skin="dark">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>doswhonos</title>
-  <meta name="description" content="A terminal-driven personal blog." />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <meta name="description" content="my website" />
+  <link rel="icon" type="image/png" href="/public/favicon.png">
 </head>
-<body>
+
+<body class="is-home-page">
   <div class="app">
     <header class="topbar">
       <button id="brand-link" class="topbar-brand">doswhonos <span class="brand-dim">~</span></button>
@@ -24,31 +25,17 @@
       </main>
 
       <aside id="terminal-sheet" class="terminal-sheet" aria-label="Terminal">
-        <div class="terminal-frame">
-          <div id="terminal-output" class="terminal-output">
-            <div id="terminal-live-line" class="term-live-line">
-              <span id="terminal-prompt-live" class="terminal-prompt-live"></span>
-              <input id="terminal-input" class="terminal-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Terminal input" />
-            </div>
-          </div>
+        <div class="terminal-frame" style="padding: 0.5rem 0.5rem 0rem 0.5rem;">
+          <div id="terminal-container" style="height: 100%; width: 100%; overflow: hidden;"></div>
         </div>
       </aside>
     </div>
   </div>
 
-  <button id="terminal-fab" class="terminal-fab" type="button" aria-label="Open terminal" aria-expanded="false">&gt;_</button>
+  <button id="terminal-fab" class="terminal-fab" type="button" aria-label="Open terminal"
+    aria-expanded="false">&gt;_</button>
 
-  <noscript>This site needs JavaScript to render its content and terminal.</noscript>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/cpp.min.js"></script>
-
-  <script src="js/vfs.js"></script>
-  <script src="js/markdown.js"></script>
-  <script src="js/skin.js"></script>
-  <script src="js/content.js"></script>
-  <script src="js/terminal.js"></script>
-  <script src="js/main.js"></script>
+  <script type="module" src="/src/main.js"></script>
 </body>
+
 </html>

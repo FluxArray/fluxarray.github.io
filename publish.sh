@@ -1,5 +1,5 @@
-OBSIDIAN_POSTS="$HOME/Documents/Obsidian Notes/NOTES/00 POSTS"
-OBSIDIAN_IMAGES="$HOME/Documents/Obsidian Notess/NOTES/98 IMAGES"
+OBSIDIAN_POSTS="$HOME/Documents/Obsidian Notes/NOTES/00 Posts"
+OBSIDIAN_IMAGES="$HOME/Documents/Obsidian Notes/NOTES/98 Images"
 
 VITE_CONTENT_DIR="./public/content"
 VITE_IMAGE_DIR="./public/images"

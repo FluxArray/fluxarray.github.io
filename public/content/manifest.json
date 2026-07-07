@@ -10,14 +10,20 @@
     "title": "about"
   },
   {
-    "path": "/algo/notes/about.html",
-    "file": "algo/notes/about.md",
-    "title": "notes/"
+    "path": "/algo/notes/stringhashing.html",
+    "file": "algo/notes/Stringhashing.md",
+    "title": "String Hashing",
+    "date": "30-03-2026",
+    "tags": [
+      "hashing",
+      "Rabin-Karp",
+      "string"
+    ]
   },
   {
-    "path": "/algo/notes/string-hashing.html",
-    "file": "algo/notes/string-hashing.md",
-    "title": "string-hashing"
+    "path": "/algo/notes/about.html",
+    "file": "algo/notes/about.md",
+    "title": "about"
   },
   {
     "path": "/games/about.html",
@@ -27,7 +33,7 @@
   {
     "path": "/home.html",
     "file": "home.md",
-    "title": "Home"
+    "title": "home"
   },
   {
     "path": "/life/about.html",

@@ -1,0 +1,47 @@
+[
+  {
+    "path": "/about.html",
+    "file": "about.md",
+    "title": "about"
+  },
+  {
+    "path": "/algo/about.html",
+    "file": "algo/about.md",
+    "title": "about"
+  },
+  {
+    "path": "/algo/notes/about.html",
+    "file": "algo/notes/about.md",
+    "title": "notes/"
+  },
+  {
+    "path": "/algo/notes/string-hashing.html",
+    "file": "algo/notes/string-hashing.md",
+    "title": "string-hashing"
+  },
+  {
+    "path": "/games/about.html",
+    "file": "games/about.md",
+    "title": "about"
+  },
+  {
+    "path": "/home.html",
+    "file": "home.md",
+    "title": "home"
+  },
+  {
+    "path": "/life/about.html",
+    "file": "life/about.md",
+    "title": "about"
+  },
+  {
+    "path": "/lit/about.html",
+    "file": "lit/about.md",
+    "title": "about"
+  },
+  {
+    "path": "/misc/about.html",
+    "file": "misc/about.md",
+    "title": "about"
+  }
+]

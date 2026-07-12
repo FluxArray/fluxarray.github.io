@@ -2,7 +2,6 @@ import MD from './markdown.js';
 import VFS from './vfs.js';
 
 const Content = (() => {
-  const SITE = { name: 'guest@blog' };
   let paneEl, headerEl, breadcrumbEl, scrollEl, mathJaxRequested = false;
   let currentPath = '/home.html';
 
@@ -70,7 +69,7 @@ const Content = (() => {
   }
 
   function renderDir(node, path) {
-    document.title = `Index of ${path} — ${SITE.name}`;
+    document.title = 'doswhonos';
     headerEl.innerHTML = '';
 
     const children = VFS.listChildren(node);
@@ -108,7 +107,7 @@ const Content = (() => {
       const date = frontmatter.date || node.meta.date;
       const tags = (frontmatter.tags && frontmatter.tags.length ? frontmatter.tags : node.meta.tags) || [];
 
-      document.title = `${title} — ${SITE.name}`;
+      document.title = 'doswhonos';
 
       headerEl.innerHTML = `
         <header class="blog-header">
@@ -131,7 +130,7 @@ const Content = (() => {
   function notFound(path) {
     headerEl.innerHTML = '';
     paneEl.innerHTML = `<div class="error-view"><p><strong>${escapeHtml(path)}</strong> doesn't exist.</p></div>`;
-    document.title = `Not found — ${SITE.name}`;
+    document.title = 'doswhonos';
   }
 
   function render(path) {

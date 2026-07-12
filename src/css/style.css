@@ -357,22 +357,22 @@ html[data-skin='sunny'] .prose {
 }
 
 .prose h1 {
-  font-size: 2rem;
+  font-size: 26.676px;
   color: #c7c7c7;
 }
 
 .prose h2 {
-  font-size: 1.75rem;
+  font-size: 24.55px;
   color: #c7c7c7;
 }
 
 .prose h3 {
-  font-size: 1.4rem;
+  font-size: 22.23px;
   color: #c7c7c7;
 }
 
 .prose h4 {
-  font-size: 1.2rem;
+  font-size: 20px;
   color: #c7c7c7;
 }
 
@@ -556,6 +556,8 @@ details>summary.spoiler-summary::before {
   top: 0.55em;
   width: 0.45em;
   height: 0.45em;
+  border-right: 2px solid #79c0ff;
+  border-bottom: 2px solid #79c0ff;
   transform: rotate(-45deg);
   transition: transform var(--el-time), border-color var(--el-time);
 }
@@ -566,12 +568,12 @@ details[open]>summary.spoiler-summary::before {
 
 .spoiler-content {
   margin: 0.5rem 0;
-  padding: 0.5rem 0.75rem;
+  padding: 1.5rem;
   color: var(--el-text);
   background: transparent;
   line-height: 1.45;
-  border: 0.75px solid var(--el-text);
-  border-radius: var(--el-radius);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
   overflow-x: auto;
   overflow-y: visible;
   -webkit-overflow-scrolling: touch;

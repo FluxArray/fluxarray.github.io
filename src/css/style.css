@@ -390,11 +390,15 @@ html[data-skin='sunny'] .prose {
   margin: 0.3em 0;
 }
 
+.prose li::marker {
+  color: #9E9E9E;
+}
+
 .prose blockquote {
   margin: 1.1em 0;
   padding: 0.2em 1em;
-  border-left: 3px solid var(--accent);
-  color: var(--text-muted);
+  border-left: 3px solid #9E9E9E;
+  color: var(--text);
 }
 
 .prose hr {

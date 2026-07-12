@@ -8,7 +8,7 @@ const MD = (() => {
 
   marked.use({
     gfm: true,
-    breaks: false,
+    breaks: true,
     renderer: {
       code(codeOrToken, langOrUndefined) {
         const text = typeof codeOrToken === 'string' ? codeOrToken : codeOrToken.text;
@@ -40,7 +40,7 @@ const MD = (() => {
       val = val.replace(/^["']|["']$/g, '');
       if (val.startsWith('[[') && val.endsWith(']]')) {
         val = val.slice(2, -2).trim();
-      } 
+      }
       else if (val.startsWith('[') && val.endsWith(']')) {
         val = val
           .slice(1, -1)
@@ -48,7 +48,11 @@ const MD = (() => {
           .map((s) => s.trim().replace(/^["']|["']$/g, ''))
           .filter((s) => s.length > 0);
       }
-      
+
+      if (key === 'tags' && !Array.isArray(val)) {
+        val = val.split(',').map((s) => s.trim()).filter((s) => s.length > 0);
+      }
+
       frontmatter[key] = val;
     }
     return { frontmatter, body: match[2] };

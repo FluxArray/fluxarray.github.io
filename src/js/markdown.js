@@ -76,7 +76,7 @@ const MD = (() => {
       }
       return `![image](/images/${filename})`;
     });
-
+    body = body.replace(/^:::spoiler\s+(.*?)\n([\s\S]*?)\n:::/gm, '<details class="spoiler">\n<summary class="spoiler-summary">$1</summary>\n<div class="spoiler-content">\n\n$2\n\n</div>\n</details>');
     const { replaced, store } = protectMath(body);
     let html = marked.parse(replaced);
     html = restoreMath(html, store);

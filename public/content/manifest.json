@@ -10,6 +10,12 @@
     "title": "about"
   },
   {
+    "path": "/algo/contests/cf-1914.html",
+    "file": "algo/contests/CF-1914.md",
+    "title": "Class",
+    "date": "2026-07-11"
+  },
+  {
     "path": "/algo/notes/stringhashing.html",
     "file": "algo/notes/Stringhashing.md",
     "title": "String Hashing",

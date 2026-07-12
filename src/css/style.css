@@ -1014,17 +1014,3 @@ body.is-about-page .prose,
 body.is-about-page .plain-page {
   margin-left: 0 !important;
 }
-
-.prose strong {
-  color: #D81F26;
-  font-weight: 600;
-}
-
-/* Color for Math equations */
-mjx-container {
-  color: #79c0ff !important;
-}
-
-mjx-container[display="true"] {
-  color: #79c0ff !important;
-}

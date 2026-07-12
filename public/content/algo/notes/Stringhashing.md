@@ -52,7 +52,7 @@ but 26 is not used cause 26 is not a prime as when hashing there are more chance
 but since this could not be stored in integer we could just as in a string which is has a length 10 it will be a problem for overflow (ie: $31^9$) so we use modulo operator which does this basically:
 $n$ % $m$ where $m = 10e9 + 7$
 So basically
-![[Pastedimage20260330214138.png]]
+![[Pasted image 20260330214138.png]]
 
 this is used widely.
 It's called **polynomial rolling hash function**
@@ -78,10 +78,10 @@ long long compute_hash(string const& s) {
 ### fast calculation of a substring of a given string
 Given a string s and indices i and j, find the hash of the substring $s[i...j]$
 then we have
+![[Pasted image 20260331101827.png]]
 
-![[Pastedimage20260331101827.png]]
 multiply this by $p^i$ then we have this thing
-![[Pastedimage20260331102228.png|heheboi]]
+![[Pasted image 20260331102228.png]]
 so for finding $hash(s[i...j])$ we have to divide it by $p^i$ in the final equation => we have to take modular inverse $p^i$.
 But there is a much easier method to do that we just multiply the hash by some power of p which it's missing.
 

@@ -31,12 +31,33 @@ const MD = (() => {
     if (!match) return { frontmatter: {}, body: raw };
 
     const frontmatter = {};
+    let currentKey = null;
+
     for (const line of match[1].split('\n')) {
+      const trimmedLine = line.trim();
+      if (trimmedLine.startsWith('- ') && currentKey) {
+        let listVal = trimmedLine.slice(2).trim().replace(/^["']|["']$/g, '');
+        if (!Array.isArray(frontmatter[currentKey])) {
+          frontmatter[currentKey] = [];
+        }
+        frontmatter[currentKey].push(listVal);
+        continue;
+      }
+
       const idx = line.indexOf(':');
       if (idx === -1) continue;
+
       const key = line.slice(0, idx).trim();
       let val = line.slice(idx + 1).trim();
       if (!key) continue;
+
+      currentKey = key;
+
+      if (val === '') {
+        frontmatter[key] = [];
+        continue;
+      }
+
       val = val.replace(/^["']|["']$/g, '');
       if (val.startsWith('[[') && val.endsWith(']]')) {
         val = val.slice(2, -2).trim();
@@ -80,7 +101,7 @@ const MD = (() => {
       if (caption) {
         return `\n\n<figure class="blog-figure">\n  <img src="/images/${filename}" alt="${caption}">\n  <figcaption>${caption}</figcaption>\n</figure>\n\n`;
       }
-      return `![image](/images/${filename})`;
+      return `\n\n<img src="/images/${filename}" alt="image">\n\n`;
     });
     body = body.replace(/^:::spoiler\s+(.*?)\n([\s\S]*?)\n:::/gm, '<details class="spoiler">\n<summary class="spoiler-summary">$1</summary>\n<div class="spoiler-content">\n\n$2\n\n</div>\n</details>');
     const { replaced, store } = protectMath(body);

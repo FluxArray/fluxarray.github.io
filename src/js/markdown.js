@@ -37,16 +37,18 @@ const MD = (() => {
       const key = line.slice(0, idx).trim();
       let val = line.slice(idx + 1).trim();
       if (!key) continue;
-
-      if (val.startsWith('[') && val.endsWith(']')) {
+      val = val.replace(/^["']|["']$/g, '');
+      if (val.startsWith('[[') && val.endsWith(']]')) {
+        val = val.slice(2, -2).trim();
+      } 
+      else if (val.startsWith('[') && val.endsWith(']')) {
         val = val
           .slice(1, -1)
           .split(',')
           .map((s) => s.trim().replace(/^["']|["']$/g, ''))
           .filter((s) => s.length > 0);
-      } else {
-        val = val.replace(/^["']|["']$/g, '');
       }
+      
       frontmatter[key] = val;
     }
     return { frontmatter, body: match[2] };

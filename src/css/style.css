@@ -535,8 +535,9 @@ details>summary.spoiler-summary {
   display: block;
   list-style: none;
   cursor: pointer;
-  padding-left: 1rem;
+  padding-left: 1.25rem;
   color: var(--el-text);
+  font-family: var(--font-mono);
   transition: color var(--el-time);
   position: relative;
 }

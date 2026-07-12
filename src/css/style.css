@@ -358,22 +358,22 @@ html[data-skin='sunny'] .prose {
 
 .prose h1 {
   font-size: 2rem;
-  color: #ffffff;
+  color: #c7c7c7;
 }
 
 .prose h2 {
   font-size: 1.75rem;
-  color: #ffffff;
+  color: #c7c7c7;
 }
 
 .prose h3 {
   font-size: 1.4rem;
-  color: #ffffff;
+  color: #c7c7c7;
 }
 
 .prose h4 {
   font-size: 1.2rem;
-  color: #ffffff;
+  color: #c7c7c7;
 }
 
 .prose>*:first-child {

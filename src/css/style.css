@@ -1016,15 +1016,15 @@ body.is-about-page .plain-page {
 }
 
 .prose strong {
-  color: #ffffff;
+  color: #fe8019;
   font-weight: 600;
 }
 
 /* Color for Math equations */
 mjx-container {
-  color: #ffffff !important;
+  color: #8ec07c !important;
 }
 
 mjx-container[display="true"] {
-  color: #ffffff !important;
+  color: #8ec07c !important;
 }

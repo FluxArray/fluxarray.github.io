@@ -573,8 +573,8 @@ details[open]>summary.spoiler-summary::before {
   color: var(--el-text);
   background: transparent;
   line-height: 1.45;
-  border: 0.1px solid var(--text);
-  border-radius: 1px;
+  border: 0.5px solid var(--text);
+  border-radius: 2px;
   overflow-x: auto;
   overflow-y: visible;
   -webkit-overflow-scrolling: touch;

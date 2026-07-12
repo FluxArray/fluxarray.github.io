@@ -338,10 +338,6 @@ html[data-skin='dark'] body::before {
   border-radius: var(--radius-sm);
 }
 
-.prose>h1:first-child {
-  display: none;
-}
-
 /* prose typography */
 .prose {
   max-width: 42rem;

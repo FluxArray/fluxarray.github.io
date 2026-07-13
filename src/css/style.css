@@ -5,7 +5,8 @@
   --el-time: 140ms ease-out;
   --ease-retro: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --sidebar-w: 420px;
-  --font-code: 'IBM Plex Mono', 'Monaco', 'Menlo', 'Consolas', monospace;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --prose-font-size: 1rem;
 }
 
 /* skin: dark (default) */
@@ -21,11 +22,8 @@ html[data-skin='dark'] {
 
   --el-surface: #0f0f0f;
   --el-text: #d0d0d0;
-  --el-radius: 2px;
 
-  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
   --body-font: var(--font-mono);
-  --prose-font-size: 17.784px;
 
   --radius-sm: 2px;
   --code-bg: #000000;
@@ -51,12 +49,9 @@ html[data-skin='sunny'] {
 
   --el-surface: #fffdf8;
   --el-text: #2b2b2b;
-  --el-radius: 4px;
 
   --body-font: var(--font-serif);
   --font-serif: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
-  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
-  --prose-font-size: 17.784px;
 
   --radius-sm: 4px;
   --code-bg: #f6f8fa;
@@ -72,6 +67,16 @@ html[data-skin='sunny'] {
 /* Reset & base */
 * {
   box-sizing: border-box;
+}
+
+html {
+  /* Fluid type scale: root is 16px up to ~375px (phones), rising to 18px
+     by ~1280px (laptop), capped there for wider screens.
+     Body text is --prose-font-size (0.9rem), so this gives:
+       mobile: body 14.4px / h3 18px / h1 24px
+       laptop: body 16.2px / h3 20.25px / h1 27px
+     Everything else in the file rides this same rem/em cascade. */
+  font-size: clamp(1rem, 0.948rem + 0.221vw, 1.125rem);
 }
 
 html,
@@ -280,7 +285,7 @@ html[data-skin='dark'] body::before {
   overflow-y: auto;
   padding: 2.25rem 3rem 4rem;
   position: relative;
-  transition: opacity 120ms ease;
+  transition: opacity var(--el-time);
 }
 
 .content-body.is-loading {
@@ -353,23 +358,23 @@ html[data-skin='sunny'] .prose {
 }
 
 .prose h1 {
-  font-size: 26.676px;
-  color: #c7c7c7;
+  font-size: 1.67em;
+  color: var(--title);
 }
 
 .prose h2 {
-  font-size: 24.55px;
-  color: #c7c7c7;
+  font-size: 1.44em;
+  color: var(--title);
 }
 
 .prose h3 {
-  font-size: 22.23px;
-  color: #c7c7c7;
+  font-size: 1.25em;
+  color: var(--title);
 }
 
 .prose h4 {
-  font-size: 20px;
-  color: #c7c7c7;
+  font-size: 1.08em;
+  color: var(--title);
 }
 
 .prose>*:first-child {
@@ -377,7 +382,7 @@ html[data-skin='sunny'] .prose {
 }
 
 .prose p {
-  margin: 0px 0px 22.23px 0px;
+  margin: 0 0 1.25em 0;
 }
 
 .prose ul,
@@ -391,13 +396,13 @@ html[data-skin='sunny'] .prose {
 }
 
 .prose li::marker {
-  color: #5f5f5f;
+  color: var(--text-muted);
 }
 
 .prose blockquote {
   margin: 1.1em 0;
   padding: 0.2em 1em;
-  border-left: 3px solid #5f5f5f;
+  border-left: 3px solid var(--text-muted);
   color: var(--text);
 }
 
@@ -413,7 +418,7 @@ html[data-skin='sunny'] .prose {
 }
 
 .prose code {
-  font-family: var(--font-code);
+  font-family: var(--font-mono);
   font-size: 0.95em;
   background: var(--code-bg);
   border: 1px solid var(--code-border);
@@ -434,8 +439,8 @@ html[data-skin='sunny'] .prose {
   background: none;
   border: none;
   padding: 0;
-  font-family: var(--font-code);
-  font-size: 0.95rem;
+  font-family: var(--font-mono);
+  font-size: 0.95em;
   line-height: 1.55;
   font-weight: normal;
   color: var(--hljs-text);
@@ -573,8 +578,8 @@ details[open]>summary.spoiler-summary::before {
   color: var(--el-text);
   background: transparent;
   line-height: 1.45;
-  border: 0.5px solid var(--text);
-  border-radius: 2px;
+  border: 1px solid var(--text);
+  border-radius: var(--radius-sm);
   overflow-x: auto;
   overflow-y: visible;
   -webkit-overflow-scrolling: touch;
@@ -583,8 +588,8 @@ details[open]>summary.spoiler-summary::before {
 .theorem-box {
   margin: 0.6rem 0;
   padding: 0.5rem 0.75rem;
-  border: 0.75px solid var(--el-text);
-  border-radius: var(--el-radius);
+  border: 1px solid var(--el-text);
+  border-radius: var(--radius-sm);
   background: transparent;
   color: var(--el-text);
   overflow-x: auto;
@@ -925,7 +930,6 @@ html[data-skin='dark'] {
     justify-content: center;
     font-family: var(--font-mono);
     font-size: 1rem;
-    color: var(--text-muted);
     letter-spacing: 0.25em;
     color: var(--accent);
     writing-mode: vertical-rl;
@@ -990,16 +994,6 @@ html[data-skin='dark'] {
   font-size: 0.85rem;
   color: var(--text-muted);
   font-style: italic;
-}
-
-/* Center the Reading Column (Default) */
-.prose,
-.blog-header,
-.dirlist-view,
-.error-view {
-  margin-left: auto !important;
-  margin-right: auto !important;
-  max-width: 69rem;
 }
 
 /* Hide the title/header on Home and About pages */
